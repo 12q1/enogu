@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -16,6 +16,10 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  navLink: {
+    color: 'white',
+    textDecoration: 'none'
+  }
 }));
 
 export default function ButtonAppBar() {
@@ -28,13 +32,13 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title}>
             ENOGU
           </Typography>
-          <Link to="/">
+          <Link to="/" className={classes.navLink}>
             <Button color="inherit">Home</Button>
           </Link>
-          <Link to="/canvas">
+          <Link to="/canvas" className={classes.navLink}>
             <Button color="inherit">New</Button>
           </Link>
-          <Link to="/projects">
+          <Link to="/projects" className={classes.navLink}>
             <Button color="inherit">Projects</Button>
           </Link>
         </Toolbar>
